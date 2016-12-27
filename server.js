@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express()
 app.set('view engine', 'pug')
+var port = process.env.PORT || 3000;
 
 app.get('/', function(req,res){
     res.render('index', { title: 'Timestamp API', message: 'Hello there!' })
@@ -28,6 +29,6 @@ app.get('/:time', function (req, res) {
     res.send(data)
 })
 
-app.listen(8080, function () {
-  console.log('Example app listening on port 3000!')
+app.listen(port, function () {
+  console.log('Example app listening on port: '+port)
 })
