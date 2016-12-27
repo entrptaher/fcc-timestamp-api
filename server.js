@@ -4,7 +4,7 @@ app.set('view engine', 'pug')
 var port = process.env.PORT || 3000;
 
 app.get('/', function(req,res){
-    res.render('index', { title: 'Timestamp API', message: 'Hello there!' })
+    res.render('index', { title: 'Timestamp API', baseurl: req.protocol + '://' + req.get('host') })
 })
 
 app.get('/:time', function (req, res) {
